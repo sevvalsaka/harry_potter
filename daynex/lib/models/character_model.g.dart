@@ -13,6 +13,8 @@ _$CharacterModelImpl _$$CharacterModelImplFromJson(Map<String, dynamic> json) =>
       house: json['house'] as String,
       actor: json['actor'] as String,
       species: json['species'] as String,
+      gender: json['gender'] as String,
+      ancestry: json['ancestry'] as String,
     );
 
 Map<String, dynamic> _$$CharacterModelImplToJson(
@@ -23,4 +25,6 @@ Map<String, dynamic> _$$CharacterModelImplToJson(
   'house': instance.house,
   'actor': instance.actor,
   'species':instance.species,
+  'gender': instance.gender,
+  'ancestry':instance.ancestry,
 };

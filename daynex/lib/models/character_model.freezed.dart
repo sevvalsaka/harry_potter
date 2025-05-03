@@ -26,6 +26,8 @@ mixin _$CharacterModel {
   String get house => throw _privateConstructorUsedError;
   String get actor => throw _privateConstructorUsedError;
   String get species => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
+  String get ancestry => throw _privateConstructorUsedError;
 
   /// Serializes this CharacterModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,7 +47,7 @@ abstract class $CharacterModelCopyWith<$Res> {
   ) = _$CharacterModelCopyWithImpl<$Res, CharacterModel>;
   @useResult
   $Res call(
-      {String name, String image, String house, String actor, String species});
+      {String name, String image, String house, String actor, String species, String gender, String ancestry});
 }
 
 /// @nodoc
@@ -68,6 +70,8 @@ class _$CharacterModelCopyWithImpl<$Res, $Val extends CharacterModel>
     Object? house = null,
     Object? actor = null,
     Object? species = null,
+    Object? gender = null,
+    Object? ancestry = null,
   }) {
     return _then(
       _value.copyWith(
@@ -91,6 +95,14 @@ class _$CharacterModelCopyWithImpl<$Res, $Val extends CharacterModel>
             ? _value.species
             : actor // ignore: cast_nullable_to_non_nullable
                 as String,
+        gender: null == gender
+            ? _value.species
+            : gender // ignore: cast_nullable_to_non_nullable
+                as String,
+        ancestry: null == ancestry    
+            ? _value.species
+            : ancestry // ignore: cast_nullable_to_non_nullable
+                as String,  
       ) as $Val,
     );
   }
@@ -106,7 +118,7 @@ abstract class _$$CharacterModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name, String image, String house, String actor, String species});
+      {String name, String image, String house, String actor, String species, String gender, String ancestry});
 }
 
 /// @nodoc
@@ -128,6 +140,8 @@ class __$$CharacterModelImplCopyWithImpl<$Res>
     Object? house = null,
     Object? actor = null,
     Object? species = null,
+    Object? gender = null,
+    Object? ancestry = null,  
   }) {
     return _then(
       _$CharacterModelImpl(
@@ -151,6 +165,14 @@ class __$$CharacterModelImplCopyWithImpl<$Res>
             ? _value.species
             : actor // ignore: cast_nullable_to_non_nullable
                 as String,
+        gender: null == gender
+            ? _value.species
+            : gender // ignore: cast_nullable_to_non_nullable
+                as String,
+        ancestry: null == ancestry    
+            ? _value.species
+            : ancestry // ignore: cast_nullable_to_non_nullable
+                as String,  
       ),
     );
   }
@@ -164,7 +186,9 @@ class _$CharacterModelImpl implements _CharacterModel {
     required this.image,
     required this.house,
     required this.actor,
-    required this.species
+    required this.species,
+    required this.gender,
+    required this.ancestry
   });
 
   factory _$CharacterModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -180,10 +204,14 @@ class _$CharacterModelImpl implements _CharacterModel {
   final String actor;
    @override
   final String species;
+    @override
+  final String gender;
+   @override
+  final String ancestry;
 
   @override
   String toString() {
-    return 'CharacterModel(name: $name, image: $image, house: $house, actor: $actor, species: $species)';
+    return 'CharacterModel(name: $name, image: $image, house: $house, actor: $actor, species: $species, gender: $gender, ancestry: $ancestry)';
   }
 
   @override
@@ -195,7 +223,9 @@ class _$CharacterModelImpl implements _CharacterModel {
             (identical(other.image, image) || other.image == image) &&
             (identical(other.house, house) || other.house == house) &&
             (identical(other.actor, actor) || other.actor == actor) &&
-            (identical(other.actor, species) || other.species == species));
+            (identical(other.actor, species) || other.species == species) &&
+            (identical(other.actor, gender) || other.gender == gender) &&
+            (identical(other.actor, ancestry) || other.ancestry == ancestry));
   } 
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -226,6 +256,8 @@ abstract class _CharacterModel implements CharacterModel {
     required final String house,
     required final String actor,
     required final String species,
+    required final String gender,
+    required final String ancestry,
   }) = _$CharacterModelImpl;
 
   factory _CharacterModel.fromJson(Map<String, dynamic> json) =
@@ -241,6 +273,10 @@ abstract class _CharacterModel implements CharacterModel {
   String get actor;
     @override
   String get species;
+  @override
+  String get gender;
+    @override
+  String get ancestry;
 
   /// Create a copy of CharacterModel
   /// with the given fields replaced by the non-null parameter values.

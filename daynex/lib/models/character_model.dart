@@ -1,4 +1,5 @@
 // models/character_model.dart
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'character_model.freezed.dart';
@@ -12,6 +13,8 @@ class CharacterModel with _$CharacterModel {
     required String house,
     required String actor,
     required String species,
+    required String gender,
+    required String ancestry,
   }) = _CharacterModel;
 
   factory CharacterModel.fromJson(Map<String, dynamic> json) =>
